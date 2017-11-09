@@ -3,4 +3,4 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 
 def hello(request):
-    return HttpResponse('Olá mundo')
+    return HttpResponse('Olá mundo!')
