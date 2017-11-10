@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from tarefas.models import Tarefas
 
 def hello(request):
-    return HttpResponse('Olá mundo2!')
+    return HttpResponse('Olá mundo2! teste')
 
 def adicionar():
     tarefa = Tarefas()
