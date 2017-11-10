@@ -23,7 +23,44 @@
             </div>
         </nav>
         <div class="container">
-
+            <div class="panel panel-default" style="margin-top:80px;">                
+                <div class="panel-heading"> Cadastrar tarefas</div>                
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="panel-body">                        
+                            <div class="col-md-12">
+                                <input type="text" name="nome" placeholder="Escreva o nome da tarefa"
+                                class="form-control" style="margin-bottom: 5px;">
+                                <textarea name="descricao" cols="30" rows="3" class="form-control"
+                                placeholder="Descreva a sua tarefa"></textarea>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-success">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading"> Lista de tarefas - [ {{contador}} ]</div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição {{hello}}</th>
+                        </tr>
+                        {% for tarefa in lista_tarefas %}
+                            <tr>
+                                <td>{{tarefa.nome}}</td>
+                                <td>{{tarefa.descricao}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>
